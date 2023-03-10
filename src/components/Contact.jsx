@@ -6,7 +6,7 @@ import colorSharpRight from "../assets/images/color-sharp-right.png";
 
 const Contact = () => {
   return (
-    <section  id="connect">
+    <section className="contact-section" id="contact">
       <div className="contact gold-border ">
       <div className="contact-container flex-row flex-space-between">
       <div className=" flex-column flex-center flex-justify-center">
@@ -16,25 +16,25 @@ const Contact = () => {
         <div className="">
           <ul className="flex-row space-small flex-wrap contact-links-container">
             <li>
-              <a href="mailto:khushi.johri01@gmail.com">
+              <a href="mailto:khushi.johri01@gmail.com" target="_blank">
                 <EnvelopeFill className="contact-social-icons" />
               </a>
             </li>
             <li>
               <a
-                href="https://www.linkedin.com/in/khushi-johri-b74970202/"
+                href="https://www.linkedin.com/in/khushi-johri-b74970202/" target="_blank"
                 className="contact-social-icons fa fa-linkedin"
               />
             </li>
             <li>
               <a
-                href="https://github.com/khushijohri2001/"
+                href="https://github.com/khushijohri2001/" target="_blank"
                 className="contact-social-icons fa fa-github "
               />
             </li>
             <li>
               <a
-                href="https://twitter.com/khushijohri01"
+                href="https://twitter.com/khushijohri01" target="_blank"
                 className="contact-social-icons fa fa-twitter "
               />
             </li>

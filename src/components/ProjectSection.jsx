@@ -1,58 +1,25 @@
-import projImg1 from "../assets/images/project-img1.png";
-import projImg2 from "../assets/images/project-img2.png";
-import projImg3 from "../assets/images/project-img3.png";
+
 import colorSharpLeft from "../assets/images/color-sharp-left.png";
 import "animate.css";
 import { ProjectCard } from "./ProjectCard";
-import "./css/project.css";
+import "./css/project-section.css";
 import { useState } from "react";
+import { devProjects } from "../data";
+import { digitalArt } from "../data/digitalArt";
+import { Link } from "react-router-dom";
 
 const ProjectSection = () => {
   const [active, setActive] = useState("first");
 
   const tabActiveHandler = (value) => setActive(value);
-  const projects = [
-    {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg1,
-    },
-    {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg2,
-    },
-    {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg3,
-    },
-    {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg1,
-    },
-    {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg2,
-    },
-    {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg3,
-    },
-  ];
+  
 
   return (
-    <section className="project" id="project">
+    <section className="project" id="project-section">
       <div>
         <h2>Projects</h2>
         <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book.
+        Take a look at some of my major tech projects as well as some additional projects from my hobbies such as digital art and writing content
         </p>
 
         <div id="projects-tabs">
@@ -100,8 +67,9 @@ const ProjectSection = () => {
           <div id="slideInUp">
             {active === "first" && (
               <div >
-                <div className="flex-row flex-wrap space-large flex-center flex-justify-center">
-                  {projects.map((project, index) => {
+                <Link to="/projects"> <button className="view-more-btn">View More</button></Link>
+                <div className="flex-row flex-wrap space-large flex-center flex-justify-center tab-content">
+                  {devProjects.map((project, index) => {
                     return <ProjectCard key={index} {...project} />;
                   })}
                 </div>
@@ -110,22 +78,17 @@ const ProjectSection = () => {
 
             {active === "second" && (
               <div >
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Cumque quam, quod neque provident velit, rem explicabo
-                  excepturi id illo molestiae blanditiis, eligendi dicta
-                  officiis asperiores delectus quasi inventore debitis quo.
-                </p>
+               <a href="https://www.instagram.com/iamdatingart/" target="_blank"><button className="view-more-btn-2">View More</button></a> 
+                <div className="flex-row flex-wrap space-large flex-center flex-justify-center tab-content">
+                  {digitalArt.map((project, index) => {
+                    return <ProjectCard key={index} {...project} />;
+                  })}
+                </div>
               </div>
             )}
             {active === "third" && (
               <div >
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Cumque quam, quod neque provident velit, rem explicabo
-                  excepturi id illo molestiae blanditiis, eligendi dicta
-                  officiis asperiores delectus quasi inventore debitis quo.
-                </p>
+               <p className="tx-big">Coming Soon...</p>
               </div>
             )}
           </div>

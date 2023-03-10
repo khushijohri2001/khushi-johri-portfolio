@@ -3,12 +3,15 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter as Routes } from "react-router-dom";
+import { ActiveLinkProvider } from './context/active-link-context';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Routes>
+      <ActiveLinkProvider>
     <App />
+    </ActiveLinkProvider>
     </Routes>
   </React.StrictMode>
 );

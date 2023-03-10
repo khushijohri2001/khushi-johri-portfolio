@@ -55,7 +55,7 @@ const Banner = () => {
           <div className="banner-content">
             <span className="tagline">Welcome to my Portfolio</span>
             <h1>
-              {`Hi! I'm Khushi Johri `}{" "}
+             <span className="gold-text"> {`Hi! I'm Khushi Johri `}{" "}</span>
               <span
                 className="txt-rotate"
                 dataPeriod="1000"
@@ -69,7 +69,7 @@ const Banner = () => {
 
             </p>
           <button className="gold-border connect-btn slide_right">
-            <p>Let's Connect!</p>
+          <a href="tel:+91 7597390197" target="_blank" > <p>Let's Connect!</p></a>
           </button>
           </div>
           <div >

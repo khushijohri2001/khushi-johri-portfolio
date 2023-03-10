@@ -27,13 +27,13 @@ const Skills = () => {
   };
 
   return (
-    <section className="skill" id="skills">
+    <section  id="skill">
+      <div className="skill">
       <div className="skill-bx ">
         <h2>Skills</h2>
         <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry.<br></br> Lorem Ipsum has been the industry's standard dummy
-          text.
+        The following is a list of some of my current technical skills I am proficient in at the moment <br></br>  , as well as what I am looking forward to learning over the next few months to become more proficient
+       
         </p>
         <Carousel
           responsive={responsive}
@@ -71,10 +71,11 @@ const Skills = () => {
         </Carousel>
         <h3 className="next-skill gold-text">
           Learning Redux, Testing, TypeScript, Webpacks, NodeJS, ExpressJS,
-          MongoDB, NextJS, Three.js .
+          MongoDB, NextJS, Three.js, Blockchain .
         </h3>
       </div>
       <img className="background-image-right" src={colorSharpRight} alt="Image" />
+      </div>
     </section>
   );
 };

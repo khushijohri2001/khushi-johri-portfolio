@@ -1,0 +1,14 @@
+.footer{
+    margin-top: 0rem;
+}
+
+.footer-container{
+    background: var(--purple_blue_gradient_dull);
+    padding: 4rem 10rem;
+}
+
+
+.footer p, h3, a{
+    cursor: pointer;
+    color: white;
+}

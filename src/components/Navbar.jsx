@@ -1,90 +1,220 @@
 import { useEffect, useState } from "react";
 import Logo from "../assets/logos/Logo1-transparent.png";
 import "./css/navbar.css";
-import { BrightnessHighFill, MoonStarsFill } from 'react-bootstrap-icons';
-
-
+import { BrightnessHighFill, MoonStarsFill } from "react-bootstrap-icons";
+import { useActiveLink } from "../context/active-link-context";
+import { Link, animateScroll as scroll } from "react-scroll";
+import { NavLink, useLocation } from "react-router-dom";
 
 const Navbar = () => {
-  const [active, setActive] = useState("home");
   const [scrolled, setScrolled] = useState(false);
   const [toggle, setToggle] = useState(true);
+  const location = useLocation();
+  const path = location?.pathname;
 
-  const headingActiveHandler = (value) => setActive(value);
+  const { active, headingActiveHandler } = useActiveLink();
 
   useEffect(() => {
     const onScroll = () => {
-      if( window.scrollY > 50 ){
+      if (window.scrollY > 50) {
         setScrolled(true);
-      } else{
+      } else {
         setScrolled(false);
       }
-    }
+    };
     window.addEventListener("scroll", onScroll);
 
     return () => window.removeEventListener("scroll", onScroll);
-  }, [])
-  
+  }, []);
 
+  const handleSetActive = (to) => {
+    headingActiveHandler(to);
+  };
 
   return (
-    <nav className={ scrolled ? "scrolled flex-row flex-center flex-space-between" : "flex-row flex-center flex-space-between"}>
-      <img src={Logo} alt="Logo Image" className="logo-img" />
+    <nav
+      className={
+        scrolled
+          ? "scrolled flex-row flex-center flex-space-between"
+          : "flex-row flex-center flex-space-between"
+      }
+    >
+      <img
+        src={Logo}
+        alt="Logo Image"
+        className="logo-img"
+        onClick={() => {
+          scroll.scrollToTop(0);
+        }}
+      />
 
       <div className="flex-row flex-center space-large">
         <div className="">
-          <ul className="flex-row space-medium">
-            <li>
-              {" "}
-              <h3
-                className={
-                  active === "home" ? "active-link nav-heading" : "nav-heading"
-                }
-                onClick={() => headingActiveHandler("home")}
-              >
+          {path === "/" && (
+            <ul className="flex-row space-medium">
+              <li>
+                <Link
+                  activeClass="active"
+                  to="home"
+                  spy={true}
+                  smooth={true}
+                  duration={100}
+                  offset={-70}
+                  onSetActive={handleSetActive}
+                >
+                  <h3
+                    className={
+                      active === "home"
+                        ? "active-link nav-heading"
+                        : "nav-heading"
+                    }
+                    onClick={() => headingActiveHandler("home")}
+                  >
+                    Home
+                  </h3>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  activeClass="active"
+                  to="skill"
+                  spy={true}
+                  smooth={true}
+                  duration={100}
+                  offset={-100}
+                  onSetActive={handleSetActive}
+                >
+                  <h3
+                    className={
+                      active === "skill"
+                        ? "active-link nav-heading"
+                        : "nav-heading"
+                    }
+                    onClick={() => headingActiveHandler("skill")}
+                  >
+                    {" "}
+                    Skills{" "}
+                  </h3>{" "}
+                </Link>
+              </li>
+              <li>
                 {" "}
-                Home{" "}
-              </h3>{" "}
-            </li>
-            <li>
-              {" "}
-              <h3
-                className={
-                  active === "skill" ? "active-link nav-heading" : "nav-heading"
-                }
-                onClick={() => headingActiveHandler("skill")}
-              >
+                <Link
+                  activeClass="active"
+                  to="project-section"
+                  spy={true}
+                  smooth={true}
+                  duration={100}
+                  offset={-80}
+                  onSetActive={handleSetActive}
+                >
+                  <h3
+                    className={
+                      active === "project-section"
+                        ? "active-link nav-heading"
+                        : "nav-heading"
+                    }
+                    onClick={() => headingActiveHandler("project-section")}
+                  >
+                    {" "}
+                    Projects{" "}
+                  </h3>{" "}
+                </Link>
+              </li>
+              <li>
                 {" "}
-                Skills{" "}
-              </h3>{" "}
-            </li>
-            <li>
-              {" "}
-              <h3
-                className={
-                  active === "project"
-                    ? "active-link nav-heading"
-                    : "nav-heading"
-                }
-                onClick={() => headingActiveHandler("project")}
-              >
+                <NavLink
+                  
+                  to="/blogs"
+                >
+                  <h3
+                    className={
+                      path === "/blogs"
+                        ? "active-link nav-heading"
+                        : "nav-heading"
+                    }
+                  >
+                    {" "}
+                    Blogs{" "}
+                  </h3>{" "}
+                </NavLink>
+              </li>
+              <li>
                 {" "}
-                Projects{" "}
-              </h3>{" "}
-            </li>
-            <li>
-              {" "}
-              <h3
-                className={
-                  active === "blog" ? "active-link nav-heading" : "nav-heading"
-                }
-                onClick={() => headingActiveHandler("blog")}
-              >
+                <Link
+                  activeClass="active"
+                  to="contact"
+                  spy={true}
+                  smooth={true}
+                  duration={100}
+                  offset={-200}
+                  onSetActive={handleSetActive}
+                >
+                  <h3
+                    className={
+                      active === "contact"
+                        ? "active-link nav-heading"
+                        : "nav-heading"
+                    }
+                    onClick={() => headingActiveHandler("contact")}
+                  >
+                    {" "}
+                    Contact{" "}
+                  </h3>{" "}
+                </Link>
+              </li>
+            </ul>
+          )}
+
+          {(path === "/blogs" || path === "/projects") && (
+            <ul className="flex-row space-medium">
+              <li>
+                <NavLink to="/">
+                  <h3
+                    className={
+                      path === "/"
+                        ? "active-link nav-heading"
+                        : "nav-heading"
+                    }
+                  >
+                    Home
+                  </h3>
+                </NavLink>
+              </li>
+
+              <li>
                 {" "}
-                Blogs{" "}
-              </h3>{" "}
-            </li>
-          </ul>
+                <NavLink to="/projects">
+                  <h3
+                    className={
+                       path === "/projects"
+                        ? "active-link nav-heading"
+                        : "nav-heading"
+                    }
+                  >
+                    {" "}
+                    Projects{" "}
+                  </h3>{" "}
+                </NavLink>
+              </li>
+              <li>
+                {" "}
+                <NavLink to="/blogs">
+                  <h3
+                    className={
+                      path === "/blogs"
+                        ? "active-link nav-heading"
+                        : "nav-heading"
+
+                    }
+                  >
+                    {" "}
+                    Blogs{" "}
+                  </h3>{" "}
+                </NavLink>
+              </li>
+            </ul>
+          )}
         </div>
 
         <div>
@@ -93,6 +223,7 @@ const Navbar = () => {
               {" "}
               <a
                 href="https://www.linkedin.com/in/khushi-johri-b74970202/"
+                target="_blank"
                 class="social-icons fa fa-linkedin"
               ></a>
             </li>
@@ -100,6 +231,7 @@ const Navbar = () => {
               {" "}
               <a
                 href="https://github.com/khushijohri2001/"
+                target="_blank"
                 class="social-icons fa fa-github "
               ></a>
             </li>
@@ -107,6 +239,7 @@ const Navbar = () => {
               {" "}
               <a
                 href="https://twitter.com/khushijohri01"
+                target="_blank"
                 class="social-icons fa fa-twitter "
               ></a>
             </li>
@@ -114,8 +247,15 @@ const Navbar = () => {
         </div>
 
         <div>
-          <button className="toggle-theme-btn" onClick={() => setToggle(!toggle)}>
-          { toggle ?  <BrightnessHighFill size={25}/> : <MoonStarsFill size={25}/> }
+          <button
+            className="toggle-theme-btn"
+            onClick={() => setToggle(!toggle)}
+          >
+            {toggle ? (
+              <BrightnessHighFill size={25} />
+            ) : (
+              <MoonStarsFill size={25} />
+            )}
           </button>
         </div>
       </div>

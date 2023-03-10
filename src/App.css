@@ -42,7 +42,7 @@ html {
 
 body {
   color: white;
-  background-color: #0d0d0d;
+  background-color: var(--background);
   overflow-x: hidden;
 }
 
@@ -55,6 +55,10 @@ h6 {
   margin: 0;
   padding: 0;
   line-height: none;
+}
+
+a{
+  text-decoration: none;
 }
 
 .gold-text {
@@ -91,6 +95,9 @@ h6 {
 .flex-space-between {
   justify-content: space-between;
 }
+.flex-space-between {
+  justify-content: space-around;
+}
 
 .flex-wrap {
   flex-wrap: wrap;
@@ -121,10 +128,47 @@ li {
   z-index: -4;
 }
 
+.background-image-top-right{
+  top: -20%;
+  right: -4%;
+  position: absolute;
+  width: 40%;
+  z-index: -4;
+}
+
 .background-image-left {
   top: 28%;
   position: absolute;
   bottom: 0;
   width: 40%;
   z-index: -4;
+}
+
+.tx-big{
+  font-size: 34px !important;
+  color: white !important;
+}
+
+.view-more-btn{
+  position: absolute;
+  padding: 10px 15px;
+  margin: 25px;
+  right: 5%;
+  top: -25%;
+  font-weight: bold;
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.view-more-btn-2{
+  position: absolute;
+  padding: 10px 15px;
+  margin: 25px;
+  right: 5%;
+  top: -10%;
+  font-weight: bold;
+  background-color: white;
+  border: none;
+  border-radius: 5px;
 }

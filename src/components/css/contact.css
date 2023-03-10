@@ -1,6 +1,12 @@
 /************ Contact Css ************/
+.contact-section{
+  position: relative;
+  box-shadow: -2px 10px 10px -4px #151515;
+  padding-bottom: 6rem;
+
+}
 .contact {
-   margin: 10rem 8rem;
+   margin: 10rem 8rem 0rem 8rem;
   }
 
   .contact-container{
@@ -99,8 +105,8 @@
 
   .on-top2{
     position: absolute;
-    z-index: -2;
-    right:0;
-   bottom: -520%;
-   width: 40%;
+    z-index: -1;
+    right:0%;
+   top: 40%;
+   width:20%;
   }
