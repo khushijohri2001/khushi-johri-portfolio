@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Logo from "../assets/logos/Logo1-transparent.png";
 import "./css/navbar.css";
-import { BrightnessHighFill, MoonStarsFill } from "react-bootstrap-icons";
+import { BrightnessHighFill, Download, MoonStarsFill } from "react-bootstrap-icons";
 import { useActiveLink } from "../context/active-link-context";
 import { Link, animateScroll as scroll } from "react-scroll";
 import { NavLink, useLocation } from "react-router-dom";
@@ -248,14 +248,9 @@ const Navbar = () => {
 
         <div>
           <button
-            className="toggle-theme-btn"
-            onClick={() => setToggle(!toggle)}
+            className="resume-download-btn"
           >
-            {toggle ? (
-              <BrightnessHighFill size={25} />
-            ) : (
-              <MoonStarsFill size={25} />
-            )}
+            <a href="Khushi-Johri-Resume.pdf" download="Khushi-Johri-Resume.pdf" className=" flex-row flex-center flex-justify-center text space-small"> <span>Resume</span>  <Download size={25}/> </a>
           </button>
         </div>
       </div>

@@ -11,7 +11,7 @@ const devProjects = [
       description: "A ReactJS Web App which is a clone of Netflix",
       imgUrl: NetflixClone,
       gitSrc: "https://github.com/khushijohri2001/netflix-clone",
-      liveLink: "the-netflix-clone-4ab04.web.app/"
+      liveLink: "https://the-netflix-clone-4ab04.web.app/"
     },
     {
       title: "Booklet Ecommerce Site",

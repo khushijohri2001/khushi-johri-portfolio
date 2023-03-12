@@ -69,7 +69,7 @@ const Banner = () => {
 
             </p>
           <button className="gold-border connect-btn slide_right">
-          <a href="tel:+91 7597390197" target="_blank" > <p>Let's Connect!</p></a>
+          <a href="mailto:khushi.johri01@gmail.com" target="_blank" > <p>Let's Connect!</p></a>
           </button>
           </div>
           <div >
