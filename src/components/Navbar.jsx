@@ -41,7 +41,7 @@ const Navbar = () => {
     >
       <img
         src={Logo}
-        alt="Logo Image"
+        alt="Logo Pic"
         className="logo-img"
         onClick={() => {
           scroll.scrollToTop(0);
@@ -250,7 +250,7 @@ const Navbar = () => {
           <button
             className="resume-download-btn"
           >
-            <a href="Khushi-Johri-Resume.pdf" download="Khushi-Johri-Resume.pdf" className=" flex-row flex-center flex-justify-center text space-small"> <span>Resume</span>  <Download size={25}/> </a>
+            <a href="Khushi-Johri-Resume.pdf" download="2_Khushi_Johri_Resume_BW.pdf" className=" flex-row flex-center flex-justify-center text space-small"> <span>Resume</span>  <Download size={25}/> </a>
           </button>
         </div>
       </div>

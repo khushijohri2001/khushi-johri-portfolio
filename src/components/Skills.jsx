@@ -5,6 +5,8 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import colorSharpRight from "../assets/images/color-sharp-right.png";
 import "./css/skill.css";
+import SkillCard from "./SkillCard";
+import { skillList } from "../data/skillList";
 
 const Skills = () => {
   const responsive = {
@@ -40,41 +42,13 @@ const Skills = () => {
           infinite={true}
           className="owl-carousel owl-theme skill-slider"
         >
-          <div className="item">
-            <img src={meter1} alt="Image" />
-            <h4>ReactJS</h4>
-          </div>
-          <div className="item">
-            <img src={meter2} alt="Image" />
-            <h4>JavaScript</h4>
-          </div>
-          <div className="item">
-            <img src={meter3} alt="Image" />
-            <h4>CSS</h4>
-          </div>
-          <div className="item">
-            <img src={meter1} alt="Image" />
-            <h4>React Hooks</h4>
-          </div>
-          <div className="item">
-            <img src={meter2} alt="Image" />
-            <h4>Digital Art</h4>
-          </div>
-          <div className="item">
-            <img src={meter3} alt="Image" />
-            <h4>Content Writing</h4>
-          </div>
-          <div className="item">
-            <img src={meter3} alt="Image" />
-            <h4>Git</h4>
-          </div>
+         {skillList.map(({id, label}) => <SkillCard key={id} label={label} />)}
         </Carousel>
         <h3 className="next-skill gold-text">
-          Learning Redux, Testing, TypeScript, Webpacks, NodeJS, ExpressJS,
-          MongoDB, NextJS, Three.js, Blockchain .
+          Learning TypeScript,  NodeJS, ExpressJS, MongoDB, NextJS, Three.js.
         </h3>
       </div>
-      <img className="background-image-right" src={colorSharpRight} alt="Image" />
+      <img className="background-image-right" src={colorSharpRight} alt="img" />
       </div>
     </section>
   );

@@ -45,7 +45,7 @@
     color: #121212;
     opacity: 0.8;
   }
-  .contact  button {
+  .contact button {
     font-weight: 700;
     color: #000;
     background-color: #fff;
@@ -90,9 +90,10 @@
   .contact-social-icons:hover{
     transform: scaleX(1);
     transition: 0.3s ease-in-out;
-    background-image: var(--gold_gradient_text);
+    /* background-image: var(--gold_gradient_text);
     color:transparent;
-    -webkit-background-clip:text;
+    -webkit-background-clip:text; */
+    color: #aa367c
   }
   
   .contact-links-container{

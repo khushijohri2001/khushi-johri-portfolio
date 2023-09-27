@@ -55,8 +55,8 @@
 }
 
 .slide_right:hover {
-  box-shadow: inset 400px 0 0 0 white;
-  color: var(--background)
+  box-shadow: inset 400px 0 0 0 rgba(255, 255, 255, 0.5);
+  color: black
 }
 
 .banner img {

@@ -55,15 +55,16 @@ const Banner = () => {
           <div className="banner-content">
             <span className="tagline">Welcome to my Portfolio</span>
             <h1>
-             <span className="gold-text"> {`Hi! I'm Khushi Johri `}{" "}</span>
-              <span
+             <span className="gold-text"> {`Hi! I'm Khushi Johri `}</span>
+             
+            </h1>
+            <h1> <span
                 className="txt-rotate"
                 dataPeriod="1000"
                 data-rotate='[ "Web Developer", "Digital Artist", "Content Writer" ]'
               >
                 <span className="wrap">{text}</span>
-              </span>
-            </h1>
+              </span></h1>
             <p className="banner-description">
             I'm are a creative frontend web developer based in Jaipur, India. My expertise in progressive enhancement, and design systems make you a valuable asset in the industry. I'm a 4th-year computer science student at Poornima Group of Institutions, who's always looking for opportunities to improve my skills and take on new challenges. 
 
