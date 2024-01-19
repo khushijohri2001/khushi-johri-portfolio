@@ -6,7 +6,7 @@
   .skill-bx {
     background: var(--light_background);
     border-radius: 64px;
-    text-align: center;
+    text-align: center; 
     padding: 60px 50px;
   }
   .skill h2 {
@@ -14,8 +14,8 @@
       font-weight: 700;
   }
   .skill p {
-      color: #B8B8B8;
-      font-size: 18px;
+     color: #B8B8B8;
+     font-size: 16px;
       letter-spacing: 0.8px;
       line-height: 1.5em;
       margin: 14px 0 45px 0;
@@ -36,3 +36,22 @@
     color: #F3A3C0;
     font-size: 25px;
   }
+
+  /* Media query */
+@media only screen and (max-width: 400px){
+  .skill-bx {
+    padding: 40px 2rem;
+  }
+
+  .skill-bx p{
+    text-align: justify;
+  }
+
+  .skill-slider {
+    width: 100%;
+  }
+  .next-skill{
+    letter-spacing: 1.3px;
+    font-size: 16px;
+  }
+}

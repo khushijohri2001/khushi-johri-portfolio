@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import Logo from "../assets/logos/Logo1-transparent.png";
 import "./css/navbar.css";
-import { BrightnessHighFill, Download, MoonStarsFill } from "react-bootstrap-icons";
+import { Download } from "react-bootstrap-icons";
 import { useActiveLink } from "../context/active-link-context";
 import { Link, animateScroll as scroll } from "react-scroll";
 import { NavLink, useLocation } from "react-router-dom";
+import { useMediaMatch } from "../context/media-match-context";
 
 const Navbar = () => {
+  const {matches} = useMediaMatch();
   const [scrolled, setScrolled] = useState(false);
   const [toggle, setToggle] = useState(true);
   const location = useLocation();
@@ -16,11 +18,8 @@ const Navbar = () => {
 
   useEffect(() => {
     const onScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      matches ? (window.scrollY > 50 ? setScrolled(true) : setScrolled(false)) : (window.scrollY > 0 ? setScrolled(true) : setScrolled(false))
+     
     };
     window.addEventListener("scroll", onScroll);
 
@@ -33,12 +32,10 @@ const Navbar = () => {
 
   return (
     <nav
-      className={
-        scrolled
-          ? "scrolled flex-row flex-center flex-space-between"
-          : "flex-row flex-center flex-space-between"
-      }
+      className={`nav-padding ${scrolled && "scrolled"}`}
     >
+      <div className="flex-row flex-center flex-space-between">
+      <div>
       <img
         src={Logo}
         alt="Logo Pic"
@@ -47,9 +44,10 @@ const Navbar = () => {
           scroll.scrollToTop(0);
         }}
       />
+      </div>
 
-      <div className="flex-row flex-center space-large">
-        <div className="">
+      <div className={`flex-row flex-center ${matches ? 'space-large' : 'space-small'}`}>
+       {matches && <div >
           {path === "/" && (
             <ul className="flex-row space-medium">
               <li>
@@ -215,44 +213,53 @@ const Navbar = () => {
               </li>
             </ul>
           )}
-        </div>
+        </div>}
 
-        <div>
-          <ul className="flex-row space-small">
+       {matches && <div>
+          <ul className="flex-row space-small gap">
             <li>
               {" "}
               <a
                 href="https://www.linkedin.com/in/khushi-johri-b74970202/"
                 target="_blank"
-                class="social-icons fa fa-linkedin"
-              ></a>
+                rel="noreferrer"
+                className="social-icons fa fa-linkedin"
+              > </a>
             </li>
             <li>
               {" "}
               <a
                 href="https://github.com/khushijohri2001/"
                 target="_blank"
-                class="social-icons fa fa-github "
-              ></a>
+                rel="noreferrer"
+                className="social-icons fa fa-github "
+              > </a>
             </li>
             <li>
               {" "}
               <a
                 href="https://twitter.com/khushijohri01"
                 target="_blank"
-                class="social-icons fa fa-twitter "
-              ></a>
+                rel="noreferrer"
+                className="social-icons fa fa-twitter"
+              > </a>
             </li>
           </ul>
-        </div>
+        </div>}
+        
+       
 
         <div>
           <button
             className="resume-download-btn"
           >
-            <a href="Khushi-Johri-Resume.pdf" download="2_Khushi_Johri_Resume_BW.pdf" className=" flex-row flex-center flex-justify-center text space-small"> <span>Resume</span>  <Download size={25}/> </a>
+            <a href="Khushi-Johri-Resume.pdf" download="3_Khushi_Johri_Resume_BW.pdf" className="flex-row flex-center flex-justify-center text space-small "> <span className={!matches && 'small-font'}>Resume</span>  <Download size={matches ? 25 : 16}/> </a>
           </button>
         </div>
+
+        
+        
+      </div>
       </div>
     </nav>
   );

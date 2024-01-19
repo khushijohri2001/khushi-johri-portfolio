@@ -7,8 +7,10 @@ import colorSharpRight from "../assets/images/color-sharp-right.png";
 import "./css/skill.css";
 import SkillCard from "./SkillCard";
 import { skillList } from "../data/skillList";
+import { useMediaMatch } from "../context/media-match-context";
 
 const Skills = () => {
+  const {matches} =  useMediaMatch()
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 3000 },
@@ -34,7 +36,7 @@ const Skills = () => {
       <div className="skill-bx ">
         <h2>Skills</h2>
         <p>
-        The following is a list of some of my current technical skills I am proficient in at the moment <br></br>  , as well as what I am looking forward to learning over the next few months to become more proficient
+        The following is a list of some of my current technical skills I am proficient in, {matches && <br></br>} as well as what I am looking forward to learning over the next few months to enhance my skills
        
         </p>
         <Carousel
@@ -45,7 +47,7 @@ const Skills = () => {
          {skillList.map(({id, label}) => <SkillCard key={id} label={label} />)}
         </Carousel>
         <h3 className="next-skill gold-text">
-          Learning TypeScript,  NodeJS, ExpressJS, MongoDB, NextJS, Three.js.
+          Learning TypeScript,  NodeJS, ExpressJS, MongoDB, NextJS, React Native, Three.js.
         </h3>
       </div>
       <img className="background-image-right" src={colorSharpRight} alt="img" />

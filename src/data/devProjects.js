@@ -1,4 +1,4 @@
-import NetflixClone from "../assets/images/Netflix-clone.png";
+import NamasteYoutube from "../assets/images/Namaste-yotube.png";
 import Booklet from "../assets/images/Booklet.png";
 import GameTube from "../assets/images/GameTube.png";
 import QuizClick from "../assets/images/Quiz-click.png";
@@ -7,11 +7,11 @@ import MoviePicker from "../assets/images/Movie Picker.png";
 
 const devProjects = [
     {
-      title: "Netflix Clone",
-      description: "A ReactJS Web App which is a clone of Netflix",
-      imgUrl: NetflixClone,
-      gitSrc: "https://github.com/khushijohri2001/netflix-clone",
-      liveLink: "https://the-netflix-clone-4ab04.web.app/"
+      title: "Namaste Youtube",
+      description: "A video streaming platform with advance features like Search Filter with debouncing, N nested comments",
+      imgUrl: NamasteYoutube,
+      gitSrc: "https://github.com/khushijohri2001/namste_youtube",
+      liveLink: "https://namaste-you-tube.web.app/"
     },
     {
       title: "Booklet Ecommerce Site",

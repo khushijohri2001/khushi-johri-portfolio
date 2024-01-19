@@ -1,17 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import {BrowserRouter as Routes } from "react-router-dom";
-import { ActiveLinkProvider } from './context/active-link-context';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter as Routes } from "react-router-dom";
+import { ActiveLinkProvider } from "./context/active-link-context";
+import { MediaMatchProvider } from "./context/media-match-context";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Routes>
-      <ActiveLinkProvider>
-    <App />
-    </ActiveLinkProvider>
+      <MediaMatchProvider>
+        <ActiveLinkProvider>
+          <App />
+        </ActiveLinkProvider>
+      </MediaMatchProvider>
     </Routes>
   </React.StrictMode>
 );

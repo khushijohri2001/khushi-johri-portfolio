@@ -1,10 +1,9 @@
 nav{
   position: fixed;
-  width: 100%;
+  width: 90%;
   top: 0;
   z-index:9999;
   transition: 0.32 ease-in-out;
-  
 }
 
 .scrolled{
@@ -13,12 +12,10 @@ nav{
   border-bottom: 1px solid transparent;
   border-image: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
   border-image-slice: 1;
-  width:100%;
 }
 
 .logo-img {
   height: 150px;
-  margin-left: 4rem;
 }
 
 .resume-download-btn{
@@ -26,8 +23,10 @@ nav{
   border: 2px solid black;
   padding: 10px;
   border-radius: 5px;
-  margin-right: 6rem;
   cursor: pointer;
+}
+.resume-download-btn:hover{
+  background-color: rgba(199, 72, 148, 0.7);
 }
 
 .text{
@@ -36,9 +35,7 @@ nav{
 }
 
 
-
 .nav-heading{
-  display: inline-block;
   position: relative;
   color: white;
   padding-bottom: 5px;
@@ -86,3 +83,35 @@ nav{
   -webkit-background-clip:text;
 }
 
+.nav-padding{
+  padding: 0 6rem;
+}
+
+.small-font{
+  font-weight: 600;
+  font-size: 12px;
+}
+
+
+/* Media query */
+@media only screen and (max-width: 400px){
+  nav{
+    /* padding-top: 2rem; */
+  }
+
+  .nav-heading{
+    display: none;
+  }
+  
+  .hamburger{
+    display: block;
+  }
+
+  .logo-img {
+    height: 90px;
+  }
+
+  .nav-padding{
+    padding: 0 2rem 0 1rem;
+  }
+}

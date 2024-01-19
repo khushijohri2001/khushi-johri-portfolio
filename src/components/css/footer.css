@@ -1,14 +1,21 @@
 .footer{
     margin-top: 0rem;
+    background: var(--purple_blue_gradient_dull);
+    width: 100vw;
 }
 
 .footer-container{
-    background: var(--purple_blue_gradient_dull);
     padding: 4rem 10rem;
 }
 
 
-.footer p, h3, a{
+.footer h3, a{
     cursor: pointer;
     color: white;
+}
+
+@media only screen and (max-width: 400px){
+    .footer-container{
+        padding: 4rem 2rem;
+    }
 }

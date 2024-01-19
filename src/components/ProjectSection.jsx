@@ -78,7 +78,7 @@ const ProjectSection = () => {
 
             {active === "second" && (
               <div >
-               <a href="https://www.instagram.com/iamdatingart/" target="_blank"><button className="view-more-btn-2">View More</button></a> 
+               <a href="https://www.instagram.com/iamdatingart/" target="_blank" rel="noreferrer"><button className="view-more-btn-2">View More</button></a> 
                 <div className="flex-row flex-wrap space-large flex-center flex-justify-center tab-content">
                   {digitalArt.map((project, index) => {
                     return <ProjectCard key={index} {...project} />;
@@ -94,7 +94,7 @@ const ProjectSection = () => {
           </div>
         </div>
       </div>
-      <img className=" onTop" src={colorSharpLeft}/>
+      <img className="onTop" src={colorSharpLeft}/>
     </section>
   );
 };

@@ -4,8 +4,6 @@
   margin-top: 2rem;
   padding: 12rem 8rem 2rem 8rem;
   background-position: top center;
-  background-size: cover;
-  background-repeat: no-repeat;
   justify-content: space-evenly;
 }
 
@@ -76,4 +74,39 @@
 }
 .txt-rotate > .wrap {
   border-right: 0.08em solid #666;
+}
+
+
+
+/* Media query */
+@media only screen and (max-width: 400px){
+  .banner h1{
+    font-size: 26px;
+  }
+
+  .hero-img{
+    width: 100%;
+  }
+
+  .banner {
+    padding: 12rem 2rem 2rem 2rem;
+    background-position: top center;
+    justify-content: space-evenly;
+  }
+
+  .banner .banner-description {
+    color: #B8B8B8;
+    font-size: 16px;
+    width: 100%;
+    margin-top: 2rem;
+    text-align: justify;
+  }
+  .banner-content{
+    width: 100%;
+  }
+
+  .banner .tagline {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
 }

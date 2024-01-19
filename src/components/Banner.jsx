@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import headerImg from "../assets/images/hero-img1.svg";
 import "./css/banner.css";
+import { useMediaMatch } from "../context/media-match-context";
 
 
 const Banner = () => {
+  const {matches} = useMediaMatch(); 
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [text, setText] = useState("");
@@ -11,6 +13,7 @@ const Banner = () => {
   const [index, setIndex] = useState(1);
   const toRotate = ["Web Developer", "Digital Artist", "Content Writer"];
   const period = 2000;
+  
 
   useEffect(() => {
     let ticker = setInterval(() => {
@@ -51,7 +54,7 @@ const Banner = () => {
 
   return (
     <section className="banner" id="home">
-        <div className="flex-row flex-center flex-space-between">
+        <div className={`${!matches ? 'flex-column' : 'flex-row flex-space-between'}  flex-center `}>
           <div className="banner-content">
             <span className="tagline">Welcome to my Portfolio</span>
             <h1>
@@ -60,21 +63,20 @@ const Banner = () => {
             </h1>
             <h1> <span
                 className="txt-rotate"
-                dataPeriod="1000"
+                dataperiod="1000"
                 data-rotate='[ "Web Developer", "Digital Artist", "Content Writer" ]'
               >
                 <span className="wrap">{text}</span>
               </span></h1>
             <p className="banner-description">
             I'm are a creative frontend web developer based in Jaipur, India. My expertise in progressive enhancement, and design systems make you a valuable asset in the industry. I'm a 4th-year computer science student at Poornima Group of Institutions, who's always looking for opportunities to improve my skills and take on new challenges. 
-
             </p>
           <button className="gold-border connect-btn slide_right">
-          <a href="mailto:khushi.johri01@gmail.com" target="_blank" > <p>Let's Connect!</p></a>
+          <a href="mailto:khushi.johri01@gmail.com" rel="noreferrer" target="_blank" > <p>Let's Connect!</p></a>
           </button>
           </div>
           <div >
-            <img src={headerImg} alt="Header Img" />
+            <img src={headerImg} alt="Header Img" className="hero-img" />
           </div>
         </div>
        
