@@ -10,7 +10,7 @@ const ActiveLinkProvider = ({ children }) => {
         <ActiveLinkContext.Provider value={{active, headingActiveHandler}}>
             { children }
         </ActiveLinkContext.Provider>
-    )
+    ) 
 }
 
 const useActiveLink = () => useContext(ActiveLinkContext);

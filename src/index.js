@@ -5,15 +5,18 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Routes } from "react-router-dom";
 import { ActiveLinkProvider } from "./context/active-link-context";
 import { MediaMatchProvider } from "./context/media-match-context";
+import { MenuProvider } from "./context/menu-context";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Routes>
       <MediaMatchProvider>
-        <ActiveLinkProvider>
-          <App />
-        </ActiveLinkProvider>
+          <ActiveLinkProvider>
+        <MenuProvider>
+            <App />
+        </MenuProvider>
+          </ActiveLinkProvider>
       </MediaMatchProvider>
     </Routes>
   </React.StrictMode>

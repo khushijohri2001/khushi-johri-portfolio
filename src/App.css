@@ -192,13 +192,15 @@ li {
 }
 
 /* Media query */
-@media only screen and (max-width: 400px){
+@media only screen and (max-width: 480px){
   .background-image-right {
+    right: 0%;
     width: 100%;
   }
   
   .background-image-top-right{
     width: 100%;
+    right: 0%;
   }
   
   .background-image-left {

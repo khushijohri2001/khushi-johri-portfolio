@@ -5,11 +5,14 @@ import { Blogs, Home, Projects } from "./routes";
 import { NotFoundPage } from "./routes/NotFoundPage";
 
 const App = () => {
+
   return (
     <div>
       <header>
         <Navbar />
       </header>
+
+      
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/projects" element={<Projects />} />

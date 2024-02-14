@@ -67,6 +67,13 @@ nav{
   font-size: 20px;
 }
 
+.menu-icons{
+  background-image: var(--gold_gradient_text);
+  color:transparent;
+  -webkit-background-clip:text;
+  font-size: 1.7rem;
+}
+
 .social-icons {
   border-radius: 2rem;
   text-decoration: none;
@@ -95,12 +102,11 @@ nav{
 
 /* Media query */
 @media only screen and (max-width: 400px){
-  nav{
-    /* padding-top: 2rem; */
-  }
-
-  .nav-heading{
-    display: none;
+  .social-icons:hover{
+    transform: scaleX(1);
+    transition: none;
+    color: white;
+  background: var(--purple_blue_gradient_dull);
   }
   
   .hamburger{
@@ -114,4 +120,6 @@ nav{
   .nav-padding{
     padding: 0 2rem 0 1rem;
   }
+
+  
 }

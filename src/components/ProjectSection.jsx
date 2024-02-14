@@ -94,7 +94,7 @@ const ProjectSection = () => {
           </div>
         </div>
       </div>
-      <img className="onTop" src={colorSharpLeft}/>
+      <img className="onTop" src={colorSharpLeft} alt="bg"/>
     </section>
   );
 };

@@ -1,15 +1,15 @@
 const { createContext, useContext, useState, useEffect } = require("react");
 
-const MediaMatchContext = createContext({matches: window.matchMedia("(min-width: 400px)").matches});
+const MediaMatchContext = createContext({matches: window.matchMedia("(min-width: 480px)").matches});
 
 const MediaMatchProvider = ({ children }) => {
     const [matches, setMatches] = useState(
-        window.matchMedia("(min-width: 400px)").matches
+        window.matchMedia("(min-width: 480px)").matches
       )
 
       useEffect(() => {
         window
-        .matchMedia("(min-width: 400px)")
+        .matchMedia("(min-width: 480px)")
         .addEventListener('change', e => setMatches( e.matches ));
       }, []);
 
