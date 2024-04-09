@@ -12,11 +12,11 @@ root.render(
   <React.StrictMode>
     <Routes>
       <MediaMatchProvider>
-          <ActiveLinkProvider>
-        <MenuProvider>
+        <ActiveLinkProvider>
+          <MenuProvider>
             <App />
-        </MenuProvider>
-          </ActiveLinkProvider>
+          </MenuProvider>
+        </ActiveLinkProvider>
       </MediaMatchProvider>
     </Routes>
   </React.StrictMode>

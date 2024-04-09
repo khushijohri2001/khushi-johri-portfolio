@@ -1,39 +1,13 @@
-import "./css/footer.css";
-import { Link } from "react-router-dom";
-import { animateScroll as scroll } from "react-scroll";
-import { useMediaMatch } from "../context/media-match-context";
-
 const Footer = () => {
-  const {matches} = useMediaMatch();
+  const date = new Date()
   
   return (
-    <section className="footer" id="footer">
-      <div className="footer-container flex-column flex-center gap-large">
-        <div className={`flex-row flex-space-between ${matches ? 'space-large' : 'space-medium'}`}>
-          <Link to="/">
-            {" "}
-            <h3
-              onClick={() => {
-                scroll.scrollToTop();
-              }}
-            >
-              Home
-            </h3>
-          </Link>
-          <Link to="/projects">
-            <h3>Projects List</h3>
-          </Link>
-          <Link to="/blogs">
-            <h3>Blogs List</h3> 
-          </Link>
-        </div>
+    <footer className="bg-purple-blue-gradient-dull flex items-center justify-center w-screen h-[24vh]" id="Footer">
 
-        <div>
-          <p>© 2023 Khushi Johri</p>
-        </div>
-      </div>
-    </section>
+          <p className="text-lg">© {date.getFullYear()} Khushi Johri</p>
+     
+    </footer>
   );
 };
 
-export { Footer };
+export default Footer;

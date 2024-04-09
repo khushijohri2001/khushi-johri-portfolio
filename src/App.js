@@ -1,28 +1,25 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import { Footer, Navbar } from "./components";
-import { Blogs, Home, Projects } from "./routes";
-import { NotFoundPage } from "./routes/NotFoundPage";
+import { Footer, Header } from "./components";
+import { Art, Blogs, Home, Notes, PageNotFound, Project } from "./routes";
 
 const App = () => {
-
   return (
     <div>
-      <header>
-        <Navbar />
-      </header>
+      <Header />
 
-      
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/blogs" element={<Blogs />} />
-        <Route path="*" element={<NotFoundPage />} />
+        <Route path="/project/:projectId" element={<Project />} />
+        <Route path="/blogs/:blogId" element={<Blogs />} />
+        <Route path="/art/:artId" element={<Art/>} />
+        <Route path="/notes" element={<Notes />} />
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
 
       <Footer />
     </div>
   );
-}
+};
 
 export default App;

@@ -1,4 +1,4 @@
-const skillList = [
+export const skillList = [
     {
         id: 1,
         label: "ReactJS"
@@ -56,5 +56,3 @@ const skillList = [
         label: "Content Writing"
     },
 ]
-
-export {skillList}

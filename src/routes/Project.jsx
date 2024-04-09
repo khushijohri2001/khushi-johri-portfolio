@@ -1,20 +1,20 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { devProjects } from "../data";
 import { GoldBorderButton, GoldTextButton } from "../components/constant/Buttons";
-import { devBlogs } from "../data";
 
-const Blogs = () => {
-  const { blogId } = useParams();
+const Project = () => {
+  const { projectId } = useParams();
 
-  const [blogInfo, setBlogInfo] = useState();
+  const [projectInfo, setProjectInfo] = useState();
 
   useEffect(() => {
-    const currentProjectInfo = devBlogs.find(
-      (info) => info.id === blogId
+    const currentProjectInfo = devProjects.find(
+      (info) => info.id === projectId
     );
 
-    setBlogInfo(currentProjectInfo);
-  }, [blogId]);
+    setProjectInfo(currentProjectInfo);
+  }, [projectId]);
 
   const {
     id,
@@ -25,11 +25,11 @@ const Blogs = () => {
     imgUrl,
     gitSrc,
     liveLink,
-  } = blogInfo !== undefined && blogInfo;
+  } = projectInfo !== undefined && projectInfo;
 
   return (
-    <div className="w-[80%] m-auto my-8 h-screen flex flex-col justify-center items-center max-sm:h-auto">
-      {blogInfo !== undefined ? (
+    <div className="w-[80%] m-auto my-8 h-screen flex flex-col justify-center items-center max-sm:h-auto max-sm:my-28">
+      {projectInfo !== undefined ? (
         <>
           <h1 className="text-5xl max-sm:text-3xl">{title}</h1>
 
@@ -53,10 +53,10 @@ const Blogs = () => {
           </div>
         </>
       ) : (
-        <div>Coming Soon</div>
+        <div>...Loading</div>
       )}
     </div>
   );
 };
 
-export default Blogs;
+export default Project;

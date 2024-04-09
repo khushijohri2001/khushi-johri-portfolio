@@ -1,176 +1,50 @@
 import React from "react";
-import "./css/hamburger.css";
 import { useMenu } from "../context/menu-context";
 import { useMediaMatch } from "../context/media-match-context";
-import { Link } from "react-scroll";
 import { useActiveLink } from "../context/active-link-context";
-import { NavLink, useLocation } from "react-router-dom";
+import { navItems, socialLinks } from "../data";
+import SocialLinkIcon from "./SocialLinkIcon";
+import NavLink from "./NavLink";
 
 const HamburgerMenu = () => {
-  const { isMenuOpen, setIsMenuOpen } = useMenu();
+  const { isMenuOpen } = useMenu();
   const { matches } = useMediaMatch();
-  const { active, headingActiveHandler } = useActiveLink();
-  const location = useLocation();
-  const path = location?.pathname;
-
-  const handleSetActive = (to) => {
-    headingActiveHandler(to);
-  };
+  const { active, setActive } = useActiveLink();
 
   return (
     <>
       {!matches && isMenuOpen && (
-        <div className="hamburger-container">
+        <div className="fixed w-screen h-screen bg-black z-[9999] top-[94px]">
           <div>
-            <ul className="flex-column flex-center">
-              <li>
-                <Link
-                  activeClass="active"
-                  to="home"
-                  spy={true}
-                  smooth={true}
-                  duration={100}
-                  offset={-70}
-                  onSetActive={handleSetActive}
-                >
-                  <h3
-                    className={
-                      active === "home"
-                        ? "active-link nav-heading"
-                        : "nav-heading"
-                    }
-                    onClick={() => {headingActiveHandler("home"); setIsMenuOpen(false)}}
-                  >
-                    Home
-                  </h3>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  activeClass="active"
-                  to="skill"
-                  spy={true}
-                  smooth={true}
-                  duration={100}
-                  offset={-100}
-                  onSetActive={handleSetActive}
-                >
-                  <h3
-                    className={
-                      active === "skill"
-                        ? "active-link nav-heading"
-                        : "nav-heading"
-                    }
-                    onClick={() => {headingActiveHandler("skill"); setIsMenuOpen(false)}}
-                  >
-                    {" "}
-                    Skills{" "}
-                  </h3>{" "}
-                </Link>
-              </li>
-              <li>
-                {" "}
-                <Link
-                  activeClass="active"
-                  to="project-section"
-                  spy={true}
-                  smooth={true}
-                  duration={100}
-                  offset={-80}
-                  onSetActive={handleSetActive}
-                >
-                  <h3
-                    className={
-                      active === "project-section"
-                        ? "active-link nav-heading"
-                        : "nav-heading"
-                    }
-                    onClick={() => {headingActiveHandler("project-section"); setIsMenuOpen(false)}}
-                  >
-                    {" "}
-                    Projects{" "}
-                  </h3>{" "}
-                </Link>
-              </li>
-              <li>
-                {" "}
-                <NavLink to="/blogs">
-                  <h3
-                    className={
-                      path === "/blogs"
-                        ? "active-link nav-heading"
-                        : "nav-heading"
-                    }
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {" "}
-                    Blogs{" "}
-                  </h3>{" "}
-                </NavLink>
-              </li>
-              <li>
-                {" "}
-                <Link
-                  activeClass="active"
-                  to="contact"
-                  spy={true}
-                  smooth={true}
-                  duration={100}
-                  offset={-200}
-                  onSetActive={handleSetActive}
-                >
-                  <h3
-                    className={
-                      active === "contact"
-                        ? "active-link nav-heading"
-                        : "nav-heading"
-                    }
-                    onClick={() => {headingActiveHandler("contact"); setIsMenuOpen(false)}}
-                  >
-                    {" "}
-                    Contact{" "}
-                  </h3>{" "}
-                </Link>
-              </li>
+            <ul className="flex flex-col items-center pt-4">
+              {navItems.map((title) => (
+                <div key={title}>
+                  <NavLink
+                    active={active}
+                    label={title}
+                    setActive={setActive}
+                  />
+                </div>
+              ))}
             </ul>
           </div>
 
-          
-          <div className="menu-social-links">
-            <ul className="flex-row flex-space-around flex-center">
-              <li>
-                {" "}
-                <a
-                  href="https://www.linkedin.com/in/khushi-johri-b74970202/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="social-icons fa fa-linkedin"
-                >
-                  {" "}
-                </a>
-              </li>
-              <li>
-                {" "}
-                <a
-                  href="https://github.com/khushijohri2001/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="social-icons fa fa-github "
-                >
-                  {" "}
-                </a>
-              </li>
-              <li>
-                {" "}
-                <a
-                  href="https://twitter.com/khushijohri01"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="social-icons fa fa-twitter"
-                >
-                  {" "}
-                </a>
-              </li>
+          <div
+            className=" border-t border-[rgba(176, 176, 176, 0.611)]"
+          >
+            <ul className="flex justify-around items-center w-full mt-16">
+              {socialLinks
+                .filter((_, index) => index < 3)
+                .map(({ path, icon }) => (
+                  <div key={path}>
+                    <SocialLinkIcon
+                      path={path}
+                      icon={icon}
+                      iconCount="3"
+                      classNames="rounded-full p-4 text-white bg-purple-blue-gradient-dull hover:bg-gold-gradient-text hover:text-transparent hover:bg-clip-text"
+                    />
+                  </div>
+                ))}
             </ul>
           </div>
         </div>

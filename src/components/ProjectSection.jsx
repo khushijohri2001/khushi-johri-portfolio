@@ -1,102 +1,53 @@
-
 import colorSharpLeft from "../assets/images/color-sharp-left.png";
 import "animate.css";
-import { ProjectCard } from "./ProjectCard";
-import "./css/project-section.css";
-import { useState } from "react";
-import { devProjects } from "../data";
-import { digitalArt } from "../data/digitalArt";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { navHeaderTitle } from "../data";
+import ProjectCardList from "./ProjectCardList";
+import PillHeader from "./PillHeader";
+import { useActiveLink } from "../context/active-link-context";
 
 const ProjectSection = () => {
-  const [active, setActive] = useState("first");
+  const [activeTab, setActiveTab] = useState("first");
+  const { active} = useActiveLink();
 
-  const tabActiveHandler = (value) => setActive(value);
-  
+  const tabActiveHandler = (value) => setActiveTab(value);
+
+  useEffect(() => {
+    active === "Blogs" ? setActiveTab("third") : setActiveTab("first")
+  }, [active])
 
   return (
-    <section className="project" id="project-section">
-      <div>
-        <h2>Projects</h2>
-        <p>
-        Take a look at some of my major tech projects as well as some additional projects from my hobbies such as digital art and writing content
+    <section className="my-64 relative text-center " id={active === "Blogs" ? "Blogs" : "Projects"}>
+      <div className="max-sm:w-[90%] max-sm:m-auto">
+        <h2 className="text-5xl font-bold max-sm:text-3xl">Projects</h2>
+        <p className="text-[#B8B8B8] text-lg leading-6 mt-3 mb-11 mx-auto w-[56%] max-sm:w-full max-sm:text-base max-sm:text-justify">
+          Take a look at some of my major tech projects as well as some
+          additional projects from my hobbies such as digital art and writing
+          content
         </p>
 
         <div id="projects-tabs">
           <div
-            className="nav-pills flex-row flex-center flex-space-between"
+            className="w-[72%] mx-auto bg-[rgb(255 255 255 / 10%)] flex items-center justify-between max-sm:w-full"
             id="pills-tab"
           >
-            <div className="nav-item">
-              <div
-                className={
-                  active === "first" ? "nav-link active" : "nav-link tab-first"
-                }
-                onClick={() => tabActiveHandler("first")}
-                
-              >
-                Web Development
-              </div>
-            </div>
-            <div className="nav-item">
-              <div
-                className={
-                  active === "second"
-                    ? "nav-link active"
-                    : "nav-link tab-second"
-                }
-                onClick={() => tabActiveHandler("second")}
-                
-              >
-                Digital Art
-              </div>
-            </div>
-            <div className="nav-item">
-              <div
-                className={
-                  active === "third" ? "nav-link active" : "nav-link tab-third"
-                }
-                onClick={() => tabActiveHandler("third")}
-                
-              >
-                Content Writing
-              </div>
-            </div>
+            {navHeaderTitle.map(({ serialNumber, label }) => (
+              <PillHeader
+                active={activeTab}
+                onClick={() => tabActiveHandler(serialNumber)}
+                label={label}
+              />
+            ))}
           </div>
 
-          <div id="slideInUp">
-            {active === "first" && (
-              <div >
-                <Link to="/projects"> <button className="view-more-btn">View More</button></Link>
-                <div className="flex-row flex-wrap space-large flex-center flex-justify-center tab-content">
-                  {devProjects.map((project, index) => {
-                    return <ProjectCard key={index} {...project} />;
-                  })}
-                </div>
-              </div>
-            )}
-
-            {active === "second" && (
-              <div >
-               <a href="https://www.instagram.com/iamdatingart/" target="_blank" rel="noreferrer"><button className="view-more-btn-2">View More</button></a> 
-                <div className="flex-row flex-wrap space-large flex-center flex-justify-center tab-content">
-                  {digitalArt.map((project, index) => {
-                    return <ProjectCard key={index} {...project} />;
-                  })}
-                </div>
-              </div>
-            )}
-            {active === "third" && (
-              <div >
-               <p className="tx-big">Coming Soon...</p>
-              </div>
-            )}
+          <div className="mt-12 min-h-80 max-sm:my-8 max-sm:w-[85%] max-sm:m-auto ">
+            <ProjectCardList active={activeTab} />
           </div>
         </div>
       </div>
-      <img className="onTop" src={colorSharpLeft} alt="bg"/>
+      <img className="absolute top-20 -z-30 w-[40%]" src={colorSharpLeft} alt="bg" />
     </section>
   );
 };
 
-export { ProjectSection };
+export default ProjectSection;

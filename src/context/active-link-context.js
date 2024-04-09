@@ -1,13 +1,12 @@
 const { createContext, useContext, useState } = require("react");
 
-const ActiveLinkContext = createContext({active: 'home'});
+const ActiveLinkContext = createContext({active: 'Home'});
 
 const ActiveLinkProvider = ({ children }) => {
-    const [active, setActive] = useState("home");
-    const headingActiveHandler = (value) => setActive(value);
+    const [active, setActive] = useState("Home");
 
     return(
-        <ActiveLinkContext.Provider value={{active, headingActiveHandler}}>
+        <ActiveLinkContext.Provider value={{active, setActive}}>
             { children }
         </ActiveLinkContext.Provider>
     ) 

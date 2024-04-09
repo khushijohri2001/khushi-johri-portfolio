@@ -1,12 +1,11 @@
-import React from 'react'
+import React from "react";
 
-const SkillCard = ({label}) => {
+const SkillCard = ({ label }) => {
   return (
-    <div className="item">
-            
-            <h3>{label}</h3>
-          </div>
-  )
-}
+    <div className="bg-gradient-to-r from-purple-bright to-blue-bright text-transparent bg-clip-text inline-block">
+      <h3>{label}</h3>
+    </div>
+  );
+};
 
-export default SkillCard
+export default SkillCard;
