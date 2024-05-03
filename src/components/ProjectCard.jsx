@@ -20,7 +20,7 @@ const ProjectCard = ({ id, title, description, imgUrl, active }) => {
             src={imgUrl}
             alt={title}
             className={`${
-              active === "second" ? "w-80 h-full" : "w-80 h-40"
+              active === "second" ? "w-80 h-full" : "w-80 h-full"
             }  object-cover rounded-lg max-ms:w-full max-sm:h-auto`}
           />
 

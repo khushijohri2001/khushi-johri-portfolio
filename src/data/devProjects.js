@@ -1,25 +1,38 @@
-import NamasteYoutube from "../assets/images/Namaste-yotube.png";
+import B4M from "../assets/images/B4M.png"
+import Playlyst from "../assets/images/Playlyst.png";
 import Booklet from "../assets/images/Booklet.png";
-import GameTube from "../assets/images/GameTube.png";
 import QuizClick from "../assets/images/Quiz-click.png";
-import ComponentLibrary from "../assets/images/Component Library.png";
-import MoviePicker from "../assets/images/Movie Picker.png";
 
 export const devProjects = [
   {
-    id: "gametube-video-library",
-    title: "GameTube Video Library",
+    id: "biodata-for-marriage",
+    title: "Biodata for Marriage",
     description:
-      "Built in ReactJS, GameTube is a video library for gaming related stuff.",
-    features: [],
-    techStack: [],
-    imgUrl: GameTube,
-    gitSrc: "https://github.com/khushijohri2001/React-GameTube-Video-Library",
-    liveLink: "gametube-video-library.netlify.app/",
+      "A Biodata maker where you can personalise biodata by selecting Color, Fields, Theme, Template and Language of your choice",
+    features: [
+      "Resolves a realtime problem of bad UI/UX for creating Biodata",
+      "Themes (Background and Foreground color) for biodata",
+      "Templates for biodata",
+      "Indian Regional Languages for biodata",
+      "Image cropper for profile picture",
+      "Movable and Customisable Fields",
+      "Add as many fields you want",
+      "1000+ active users on daily basis (Organic traffic)"
+    ],
+    techStack: [
+      "NextJS",
+      "Prisma",
+      "MongoDB",
+      "TailwindCSS",
+      "TypeScript",
+      "ReactJS",
+    ],
+    imgUrl: B4M,
+    liveLink: "https://b4m.vercel.app/",
   },
   {
-    id: "namaste-youtube",
-    title: "Namaste Youtube",
+    id: "play-lyst",
+    title: "Playlyst",
     description:
       "A video streaming platform with advance features like Search Filter with debouncing, N nested comments",
     features: [
@@ -43,71 +56,61 @@ export const devProjects = [
       "CSS",
       "HTML",
       "Redux Toolkit",
-      "Youtube API",
+      "Youtube API",  
       "Google Analytics",
     ],
-    imgUrl: NamasteYoutube,
+    imgUrl: Playlyst,
     gitSrc: "https://github.com/khushijohri2001/namste_youtube",
-    liveLink: "https://namaste-you-tube.web.app/",
+    liveLink: "https://play-lyst.web.app/",
   },
   {
-    id: "booklet-ecommerce-site",
-    title: "Booklet Ecommerce Site",
+    id: "booklet",
+    title: "Booklet",
     description:
-      "An online store to purchase Designer Notebooks and accessories built in ReactJS",
+      "An Online Store to purchase Designer Notebooks and accessories.",
     features: [
       "Product Listing Page",
-      "Filter by Category",
-      "Rating and Price",
+      "Filter: By Price, Sort by (Low to high and High to low), Rating, and Category.",
+      "Single Product Description Page",
       "Cart and Wishlist Page using Redux Toolkit",
-      "Single Product Page",
-      "Checkout",
+      "Share feature",
+      "Billing Page with quantity update feature",
     ],
     techStack: [
       "ReactJS",
+      "Redux",
       "Tailwind CSS",
       "Firebase",
       "React Router",
-      "JS",
+      "Javascript",
       "CSS",
       "HTML",
       "Font Awesome",
     ],
     imgUrl: Booklet,
-    gitSrc: "https://github.com/khushijohri2001/React-Booklet-Ecommerce-Site",
-    liveLink: "https://booklet-react-ecommerce-app.netlify.app/",
+    gitSrc: "https://github.com/khushijohri2001/booket",
+    liveLink: "https://booklet-c1aa8.web.app/",
   },
   {
     id: "quiz-click",
     title: "Quiz Click",
     description:
       "A Mini Quiz game built in React for Cartoon show, Movies and Web Series fans",
-    features: ["quiz"],
-    techStack: ["Html"],
+    features: [
+      "Quiz Categories", 
+      "Rules Page",
+      "Options and Score count",
+      "Result Page"
+    ],
+    techStack: [
+      "ReactJS",
+      "CSS",
+      "Material UI",
+      "React Router",
+      "HTML"
+    ],
     imgUrl: QuizClick,
     gitSrc: "https://github.com/khushijohri2001/React-Quiz-Click",
     liveLink: "https://kd9fhq.csb.app/",
-  },
-  {
-    id: "component-library",
-    title: "Component Library",
-    description:
-      "A Component Library for all the components to be used in further projects",
-    features: [],
-    techStack: [],
-    imgUrl: ComponentLibrary,
-    gitSrc:
-      "https://github.com/khushijohri2001/New-GirlifyCoder-Component-Library",
-    liveLink: "new-girlifycoder-component-library.netlify.app/",
-  },
-  {
-    id: "movie-picker",
-    title: "Movie Picker",
-    description: "Simple React mini project to list movies based on genres",
-    features: [],
-    techStack: [],
-    imgUrl: MoviePicker,
-    gitSrc: "https://github.com/khushijohri2001/MarkNineNew-MoviePicker",
-    liveLink: "https://rbf7q.csb.app/",
-  },
+  }
 ];
