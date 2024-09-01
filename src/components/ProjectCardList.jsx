@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { devBlogs, devProjects, digitalArt } from "../data";
 import ProjectCard from "./ProjectCard";
+import { devBlogs, devProjects, digitalArt } from "../data/data";
 
 const ProjectCardList = ({ active }) => {
   const [dataList, setDataList] = useState(devProjects);
@@ -10,18 +10,18 @@ const ProjectCardList = ({ active }) => {
       setDataList(devProjects);
     } else if (active === "second") {
       setDataList(digitalArt);
-    } else if(active === "third"){
-        setDataList(devBlogs)
+    } else if (active === "third") {
+      setDataList(devBlogs);
     }
   }, [active]);
 
   return (
-        <div className="flex flex-wrap gap-14 items-center justify-center">
-          {dataList && dataList.map((project, index) => {
-            return <ProjectCard key={index} {...project} active={active} />;
-          })}
-          
-        </div>
+    <div className="flex flex-wrap gap-14 items-center justify-center">
+      {dataList &&
+        dataList.map((project, index) => {
+          return <ProjectCard key={index} {...project} active={active} />;
+        })}
+    </div>
   );
 };
 

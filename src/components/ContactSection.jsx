@@ -3,12 +3,12 @@ import heroImg3 from "../assets/images/hero-img3.svg";
 import colorSharpRight from "../assets/images/color-sharp-right.png";
 import { useMediaMatch } from "../context/media-match-context";
 import SocialLinkIcon from "./SocialLinkIcon";
-import { socialLinks } from "../data";
+import { socialLinks } from "../data/data";
 
 const ContactSection = () => {
   const { matches } = useMediaMatch();
   return (
-    <section className="relative shadow-bottom pb-24" id="Contact">
+    <section className="relative shadow-bottom pb-24 pt-8" id="Contact">
       <div className="mt-40 mx-32 gold-border max-sm:mx-8">
         <div
           className={`${

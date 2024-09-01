@@ -1,23 +1,24 @@
 import {
   BannerSection,
   ContactSection,
-  HamburgerMenu,
   ProjectSection,
   SkillSection,
 } from "../components";
 import colorSharpLeft from "../assets/images/color-sharp-left.png";
 import colorSharpRight from "../assets/images/color-sharp-right.png";
+import ReactGA  from "react-ga4";
 import { useEffect } from "react";
-import { logEvent } from "firebase/analytics";
-import { analytics } from "../firebaseConfig";
 
 const Home = () => {
   useEffect(() => {
-    logEvent(analytics, { eventName: "Portfolio visited" });
-  });
+    ReactGA.initialize('G-W9JL98KJXV');
+    ReactGA.send({ hitType: "pageview", page: "/", title: "Protfolio Visited" });
+  }, []);
+
+
   return (
     <>
-      <HamburgerMenu />
+      
       <img
         className="background-image-top-right"
         src={colorSharpRight}

@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { devProjects } from "../data";
 import { GoldBorderButton, GoldTextButton } from "../components/constant/Buttons";
+import { devProjects } from "../data/data";
 
 const Project = () => {
   const { projectId } = useParams();

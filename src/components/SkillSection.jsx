@@ -1,9 +1,9 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import colorSharpRight from "../assets/images/color-sharp-right.png";
-import { skillList } from "../data/skillList";
 import { useMediaMatch } from "../context/media-match-context";
-import {SkillCard} from "../components";
+import { SkillCard } from "../components";
+import { skillList } from "../data/data";
 
 const SkillSection = () => {
   const { matches } = useMediaMatch();
@@ -23,11 +23,11 @@ const SkillSection = () => {
     mobile: {
       breakpoint: { max: 464, min: 0 },
       items: 1,
-    }, 
+    },
   };
 
   return (
-    <section className="relative mt-32" id="Skills">
+    <section className="relative py-36" id="Skills">
       <div className="text-center bg-light-background rounded-3xl py-14 px-12 max-sm:px-4 max-sm:w-[90%] max-sm:m-auto">
         <h2 className="text-5xl font-bold max-sm:text-3xl">Skills</h2>
         <p className="text-[#B8B8B8] text-lg leading-6 mt-3 mb-11 max-sm:w-full max-sm:text-base max-sm:text-justify">
@@ -38,7 +38,7 @@ const SkillSection = () => {
         <Carousel
           responsive={responsive}
           infinite={true}
-          className="text-3xl font-bold w-[80%] mx-auto py-8 relative max-sm:w-full max-sm:text-2xl"
+          className="text-3xl font-bold w-[80%] mx-auto py-8 relative max-sm:w-full max-sm:text-2xl z-[100]"
         >
           {skillList.map(({ id, label }) => (
             <SkillCard key={id} label={label} />
@@ -48,7 +48,11 @@ const SkillSection = () => {
           Learning NodeJS, ExpressJS, MongoDB, React Native, Three.js.
         </h3>
       </div>
-      <img className="absolute top-[28%] right-[-4%] bottom-0 w-[40%] -z-10" src={colorSharpRight} alt="img" />
+      <img
+        className="absolute top-[28%] right-[-4%] bottom-0 w-[40%] -z-10"
+        src={colorSharpRight}
+        alt="img"
+      />
     </section>
   );
 };

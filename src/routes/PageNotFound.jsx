@@ -1,9 +1,10 @@
 const PageNotFound = () => {
     return(
-        <div className="blog" id="blog">
-          
-            <h1 className="flex justify-center items-center">Oops! Page Not Found</h1>
-        </div>
+        <section
+        className="my-20 px-32 flex justify-center items-center h-screen max-sm:px-8 max-sm:h-auto max-sm:my-32"
+      >
+       Page Not Found
+      </section>
     )
 }
 

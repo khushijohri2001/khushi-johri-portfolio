@@ -11,4 +11,17 @@ import SkillCard from "./SkillCard";
 import NavLink from "./NavLink";
 import ContactSection from "./ContactSection";
 
-export {Header, BannerSection, SkillSection, ProjectSection, ProjectCard, ContactSection, Footer, HamburgerMenu, PillHeader, ProjectCardList, SkillCard, NavLink }
+export {
+  Header,
+  BannerSection,
+  SkillSection,
+  ProjectSection,
+  ProjectCard,
+  ContactSection,
+  Footer,
+  HamburgerMenu,
+  PillHeader,
+  ProjectCardList,
+  SkillCard,
+  NavLink,
+};

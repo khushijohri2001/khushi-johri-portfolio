@@ -2,9 +2,9 @@ import React from "react";
 import { useMenu } from "../context/menu-context";
 import { useMediaMatch } from "../context/media-match-context";
 import { useActiveLink } from "../context/active-link-context";
-import { navItems, socialLinks } from "../data";
 import SocialLinkIcon from "./SocialLinkIcon";
 import NavLink from "./NavLink";
+import { navItems, socialLinks } from "../data/data";
 
 const HamburgerMenu = () => {
   const { isMenuOpen } = useMenu();
@@ -14,25 +14,24 @@ const HamburgerMenu = () => {
   return (
     <>
       {!matches && isMenuOpen && (
-        <div className="fixed w-screen h-screen bg-black z-[9999] top-[94px]">
+        <div className="fixed w-screen h-screen bg-black z-[999] top-[94px]">
           <div>
-            <ul className="flex flex-col items-center pt-4">
-              {navItems.map((title) => (
+            <ul className="flex flex-col items-center mt-4">
+              {navItems.map(({ path, title }) => (
                 <div key={title}>
                   <NavLink
                     active={active}
-                    label={title}
                     setActive={setActive}
+                    label={title}
+                    path={path}
                   />
                 </div>
               ))}
             </ul>
           </div>
 
-          <div
-            className=" border-t border-[rgba(176, 176, 176, 0.611)]"
-          >
-            <ul className="flex justify-around items-center w-full mt-16">
+          <div className=" border-t border-[rgba(176, 176, 176, 0.611)]">
+            <ul className="flex justify-around items-center w-full mt-12">
               {socialLinks
                 .filter((_, index) => index < 3)
                 .map(({ path, icon }) => (

@@ -10,16 +10,25 @@ const PillHeader = ({ active, onClick, label }) => {
         ${
           active === "first" &&
           label === "Web Development" &&
-          "text-[#462523] font-extrabold bg-gold-gradient-text" 
+          "text-[#462523] font-extrabold bg-gold-gradient-text"
         } 
-        ${active === "second" && label === "Digital Art" && "text-[#462523] font-extrabold bg-gold-gradient-text"} 
+
+        ${
+          active === "second" &&
+          label === "Digital Art" &&
+          "text-[#462523] font-extrabold bg-gold-gradient-text"
+        } 
         
         ${
-          active === "third" && label === "Blogs" && "text-[#462523] font-extrabold bg-gold-gradient-text"
+          active === "third" &&
+          label === "Blogs" &&
+          "text-[#462523] font-extrabold bg-gold-gradient-text"
         } 
 
         ${label === "Web Development" && "rounded-l-full"}
+
         ${label === "Digital Art" && "border-x-0"}
+        
         ${label === "Blogs" && "rounded-r-full"}
         `}
         onClick={onClick}

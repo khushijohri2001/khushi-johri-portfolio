@@ -12,7 +12,7 @@ const MediaMatchProvider = ({ children }) => {
         .matchMedia("(min-width: 480px)")
         .addEventListener('change', e => setMatches( e.matches ));
       }, []);
-
+      
     return(
         <MediaMatchContext.Provider value={{matches}}>
             { children }

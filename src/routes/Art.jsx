@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { GoldBorderButton } from "../components/constant/Buttons";
-import { digitalArt } from "../data";
+import { digitalArt } from "../data/data";
 
 const Art = () => {
   const { artId } = useParams();
@@ -10,7 +10,6 @@ const Art = () => {
 
   useEffect(() => {
     const currentProjectInfo = digitalArt.find((info) => info.id === artId);
-
     setArtInfo(currentProjectInfo);
   }, [artId]);
 

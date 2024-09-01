@@ -85,12 +85,12 @@ const BannerSection = () => {
             to combine my creativity with my technical skills. I'm currently
             exploring NextJS and System Design with 2+ years of hands-on
             experience in VanillaJS, ReactJS, TypeScript, Redux, CSS, Tailwind
-            CSS, Data Structure and Alogrithms, Testing. 
-         <br/> <br/>
-         <span className="text-white">
-              To known more about me, please Scroll-up or Download my Resume from
-            the top.
-           </span>
+            CSS, Data Structure and Alogrithms, Testing.
+            <br /> <br />
+            <span className="text-white">
+              To known more about me, please Scroll-up or Download my Resume
+              from the top.
+            </span>
           </p>
           <button className="gold-border mt-12 text-white p-4 cursor-pointer bg-transparent font-bold transition delay-150 ease-in-out hover:shadow-slide-right hover:text-black max-sm:mt-6">
             <a
@@ -98,7 +98,7 @@ const BannerSection = () => {
               rel="noreferrer"
               target="_blank"
             >
-            Let's Connect!
+              Let's Connect!
             </a>
           </button>
         </div>
